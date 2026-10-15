@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinay Matroju | Software Engineer, AI/ML, Cloud</title>
+  <meta name="description" content="Vinay Matroju is a Master's student in Computer Science at the University of Cincinnati building cloud, data and AI/ML software. Open to opportunities, available January 2027.">
+  <meta name="theme-color" content="#0f1318">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply saved theme before paint to avoid a flash.
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+
+  <header class="bar">
+    <a class="bar-name" href="#top">Vinay Matroju</a>
+    <nav aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="theme-toggle" class="toggle" type="button" aria-label="Switch to light theme">
+      <span class="toggle-dot" aria-hidden="true"></span>
+      <span class="toggle-text">Light</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1 class="hero-name">Vinay Matroju</h1>
+      <p class="hero-title">SOFTWARE ENGINEER · AI/ML · CLOUD</p>
+      <p class="hero-sub">Master's in Computer Science, University of Cincinnati · Graduating April 2027 · Open to opportunities, available January 2027</p>
+      <p class="hero-lede">I build software that turns data into decisions: predictive models, dependable backend services, and language-model tools that answer from real sources.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:vinaymatroju08@gmail.com">Email</a>
+        <a class="btn" href="https://github.com/Vinay2688">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/vinaymatroju">LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <div class="project-meta">
+          <h3>RetailAI</h3>
+          <p class="when">April 2026</p>
+          <p class="stack">Python, Flask, Azure App Service, Azure SQL, scikit-learn, Chart.js</p>
+        </div>
+        <div class="project-body">
+          <p>A cloud retail analytics platform that predicts customer lifetime value, flags churn risk and suggests cross-sell items. Data lives in Azure SQL: 3 tables, 10K+ transactions and 400 households.</p>
+          <ol class="flow" aria-label="Pipeline">
+            <li>CSV upload</li>
+            <li>Azure SQL</li>
+            <li>Random Forest</li>
+            <li>Flask API</li>
+            <li>Chart.js dashboard</li>
+          </ol>
+          <ul class="points">
+            <li>Random Forest models for CLV prediction and churn classification, sorting customers into Low, Medium and High retention tiers.</li>
+            <li>Co-occurrence basket analysis over 5,000 transactions to drive cross-sell recommendations.</li>
+            <li>Cut dashboard load time by about 80% by moving aggregation into SQL and adding in-memory caching.</li>
+            <li>Fixed a SQL clause-ordering bug and replaced row-by-row inserts with <code>executemany()</code> for bulk CSV uploads.</li>
+          </ul>
+          <p class="links"><a href="https://github.com/Vinay2688/RetailAI"><!-- Replace with the RetailAI repo URL --> View code on GitHub</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <h3>Movie Recommender</h3>
+          <p class="when">Content-based version, then rebuilt as a RAG chatbot in 2025</p>
+          <p class="stack">Python, Sentence Transformers, FAISS, Google Gemini, Streamlit, TMDB API</p>
+        </div>
+        <div class="project-body">
+          <p>A conversational movie assistant that answers in natural language using movies it retrieves, and declines questions that aren't about movies.</p>
+          <ol class="flow" aria-label="Pipeline">
+            <li>Question</li>
+            <li>MiniLM embedding</li>
+            <li>FAISS search</li>
+            <li>Gemini 1.5 Flash</li>
+            <li>Streamlit chat</li>
+          </ol>
+          <ul class="points">
+            <li>Started as a content-based system on the TMDB 5000 Movies dataset, using CountVectorizer (about 5,000 features) and cosine similarity, with posters, cast, director and ratings from the TMDB API.</li>
+            <li>Rebuilt around <code>all-MiniLM-L6-v2</code> embeddings and FAISS retrieval, with Gemini generating the answer from the retrieved context.</li>
+          </ul>
+          <p class="links"><a href="https://github.com/Vinay2688/Movie-Recommender">View code on GitHub</a></p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <h3>PIB Press Release to Video</h3>
+          <p class="when">Oct 2024 to Mar 2025</p>
+          <p class="stack">Python, NLP, gTTS, Wav2Lip, OpenCV, MoviePy, FFmpeg, Streamlit</p>
+        </div>
+        <div class="project-body">
+          <p>An end-to-end pipeline that turns government press releases into narrated videos in 13 languages.</p>
+          <ol class="flow" aria-label="Pipeline">
+            <li>Press release</li>
+            <li>Summarize</li>
+            <li>Translate</li>
+            <li>Narrate</li>
+            <li>Lip-sync video</li>
+          </ol>
+          <ul class="points">
+            <li>Text summarization and translation into 13 languages, gTTS narration, Wav2Lip lip-sync and video assembly with OpenCV, MoviePy and FFmpeg, behind a Streamlit frontend.</li>
+            <li>Integrated a prebuilt GAN-based video generation model into the pipeline.</li>
+            <li>Co-authored a peer-reviewed paper: <em>Text-To-Video Conversion of PIB Press Releases Using Generative Adversarial Networks</em>, IJEIMS, December 2024.</li>
+          </ul>
+          <!-- <p class="links"><a href="https://github.com/Vinay2688">Replace with the PIB repo URL if public View on GitHub</a></p> -->
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <h3>Virtual Mouse</h3>
+          <p class="when">2024 · Computer vision</p>
+          <p class="stack">Python, OpenCV, MediaPipe, PyAutoGUI</p>
+        </div>
+        <div class="project-body">
+          <p>Control the cursor with your hand through a webcam: move your index finger to move the pointer, pinch to click.</p>
+          <ol class="flow" aria-label="Pipeline">
+            <li>Webcam frame</li>
+            <li>Hand landmarks</li>
+            <li>Map to screen</li>
+            <li>Cursor and click</li>
+          </ol>
+          <p class="links"><a href="https://github.com/Vinay2688/Hand-Gesture-Mouse"><!-- Replace with the Virtual Mouse repo URL --> View code on GitHub</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience and education</h2>
+
+      <div class="row">
+        <div class="row-when">Oct 2024 to Mar 2025</div>
+        <div class="row-main">
+          <h3>Research Intern, Anurag University</h3>
+          <p>Built the press-release-to-video pipeline above and co-authored the published paper.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-when">Jan to Mar 2024</div>
+        <div class="row-main">
+          <h3>Cyber Security Virtual Internship, AICTE</h3>
+          <p>Network security, cyber threats, data protection, ethical hacking and cyber law.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-when">2025 to April 2027</div>
+        <div class="row-main">
+          <h3>Master's in Computer Science, University of Cincinnati</h3>
+          <p>GPA 3.778.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-when">2021 to 2025</div>
+        <div class="row-main">
+          <h3>Bachelor's in Computer Science and Engineering, Anurag University, Hyderabad</h3>
+          <p>GPA 3.5.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Python, Java, C, C++, JavaScript, TypeScript, SQL</dd></div>
+        <div><dt>CS Fundamentals</dt><dd>Data structures, algorithms, object-oriented programming, software design, software development lifecycle, software development</dd></div>
+        <div><dt>Cloud &amp; Infrastructure</dt><dd>Microsoft Azure App Service, Azure SQL, AWS EC2, GCP, Docker, Kubernetes</dd></div>
+        <div><dt>Backend &amp; Web</dt><dd>Flask, Spring Boot, React, Streamlit, REST APIs, database schema design</dd></div>
+        <div><dt>Databases &amp; Version Control</dt><dd>SQL, MySQL, MySQL Workbench, Azure SQL, Git, CI/CD, GitHub Actions, Data Management</dd></div>
+        <div><dt>Systems</dt><dd>Linux, networking fundamentals and protocols</dd></div>
+        <div><dt>Machine Learning &amp; AI</dt><dd>Machine learning, deep learning, GAN-based generative models, TensorFlow, PyTorch, scikit-learn, RAG, FAISS, Sentence Transformers, embeddings-based similarity, LLM integration, Google Gemini, NLP, computer vision</dd></div>
+        <div><dt>AI Coding Tools &amp; Process</dt><dd>Claude, GitHub Copilot, Agile, Scrum</dd></div>
+        <div><dt>Tools</dt><dd>Git, VS Code, Streamlit, PyAutoGUI, Pandas, NumPy, OpenCV, MediaPipe, MoviePy, FFmpeg, Chart.js</dd></div>
+      </dl>
+      <p class="certs">Certifications: ML in Python (Cognitive Class), JavaScript Essentials (Cisco), Java Programming Fundamentals and Data Structures (Infosys), Problem Solving (HackerRank), Python (Kaggle).</p>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>Contact</h2>
+      <p>I'm open to software engineering roles and available from January 2027. If my work looks like a fit, send me an email.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:vinaymatroju08@gmail.com">vinaymatroju08@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/vinaymatroju">LinkedIn</a>
+        <a class="btn" href="https://github.com/Vinay2688">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 Vinay Matroju</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
